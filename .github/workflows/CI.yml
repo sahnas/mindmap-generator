@@ -9,24 +9,22 @@ on:
   pull_request:
     branches: [main]
 
-
 jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v4
-    - name: Setup node.js
-      uses: actions/setup-node@v4
-      with:
-        node-version: 22
-    - name: Install dependencies
-      run: npm install
-    - name: Lint
-      run: npm run lint
-    - name: Check types
-      run: npm run check:types
-    - name: Build
-      run: npm run build
-    - name: Test
-      run: npm test
-      
+      - uses: actions/checkout@v4
+      - name: Setup node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Install dependencies
+        run: npm install
+      - name: Lint
+        run: npm run lint
+      - name: Check types
+        run: npm run check:types
+      - name: Build
+        run: npm run build
+      - name: Test
+        run: npm run test:ci

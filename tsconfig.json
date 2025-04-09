@@ -1,8 +1,8 @@
 {
   "compilerOptions": {
     "target": "ESNext",
-    "module": "ESNext",
-    "moduleResolution": "Node",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
     "lib": ["esnext"],
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
@@ -13,5 +13,12 @@
     "strict": true
   },
   "include": ["src/**/*.ts", "tests/**/*.ts"],
-  "exclude": ["node_modules"]
+  "exclude": [
+    "node_modules",
+    "build",
+    "dist",
+    "coverage",
+    ".stryker-tmp",
+    "**/*.spec.ts"
+  ]
 }

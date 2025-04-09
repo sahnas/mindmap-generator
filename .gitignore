@@ -18,5 +18,9 @@ coverage
 
 production.env
 
-package-lock.json
-pnpm-lock.yaml
+output_results.csv
+
+/data/
+# stryker temp files
+.stryker-tmp
+reports/mutation/mutation.html

@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  mindmap-generator:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - '3000:3000'
+    volumes:
+      - ./data:/usr/app/data
+    env_file: 
+      - .env.production
+    environment:
+      - NODE_ENV=development
+      - PORT=3000
+      - HOST=0.0.0.0
+      - INPUT_CSV_PATH=/usr/app/data/input_context_v2.csv
+      - OUTPUT_CSV_PATH=/usr/app/data/output_results.csv
+    restart: unless-stopped
